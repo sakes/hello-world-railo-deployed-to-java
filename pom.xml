@@ -1,21 +1,51 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>hello-world-railo-deployed-to-java</groupId>
-  <artifactId>hello-world-railo-deployed-to-java</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-hello-world-railo-deployed-to-java-SNAPSHOT</version>
-  <name>hello-world-railo-deployed-to-java Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>hello-world-railo-deployed-to-java</finalName>
-  </build>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>hello-world-railo-deployed-to-java</groupId>
+    <artifactId>hello-world-railo-deployed-to-java</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-hello-world-railo-deployed-to-java-SNAPSHOT</version>
+    <name>hello-world-railo-deployed-to-java Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <railoVersion>4.2.1.000</railoVersion>
+    </properties>
+    <repositories>
+        <repository>
+            <id>artifactory</id>
+            <name>artifactory-releases</name>
+            <url>http://localhost:8081/artifactory/ext-release-local</url>
+        </repository>
+        <repository>
+            <id>cfmlprojects.org</id>
+            <url>http://cfmlprojects.org/artifacts</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>sqljdbc4</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.getrailo</groupId>
+            <artifactId>railo</artifactId>
+            <version>${railoVersion}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>hello-world-railo-deployed-to-java</finalName>
+    </build>
 </project>
