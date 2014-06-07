@@ -12,11 +12,6 @@
     </properties>
     <repositories>
         <repository>
-            <id>artifactory</id>
-            <name>artifactory-releases</name>
-            <url>http://localhost:8081/artifactory/ext-release-local</url>
-        </repository>
-        <repository>
             <id>cfmlprojects.org</id>
             <url>http://cfmlprojects.org/artifacts</url>
             <releases>
@@ -28,11 +23,6 @@
         </repository>
     </repositories>
     <dependencies>
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>sqljdbc4</artifactId>
-            <version>4.0</version>
-        </dependency>
         <dependency>
             <groupId>org.getrailo</groupId>
             <artifactId>railo</artifactId>

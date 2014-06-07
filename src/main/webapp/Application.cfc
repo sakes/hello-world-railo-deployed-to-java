@@ -21,4 +21,16 @@
 		};
 		*/
 	</cfscript>
+
+	<!--- HACK to use Application.cfm with Application.cfc --->
+	<!--- Uncomment to use --->
+	<!---
+	<cffunction name="onRequestStart">
+		<cfargument name="requestname" required="true"/>
+		<cfscript>
+			include "Application.cfm";
+			return true;
+		</cfscript>
+	</cffunction>
+	--->
 </cfcomponent>

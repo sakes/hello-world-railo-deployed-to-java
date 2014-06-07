@@ -4,11 +4,12 @@
 <body>
 <h2><cfoutput>#tryhard#</cfoutput></h2>
 
-<cfquery name="getUsers" datasource="data_source_name_for_railo_app_to_reference">
-	SELECT * 
-	FROM [User]
-</cfquery>
+<cfif structKeyExists(request, "dsn")>
+	<cfquery datasource="#request.dsn#" name="test">
+		SHOW TABLES;
+	</cfquery>
+	<cfdump var="#test#"/>
+</cfif>
 
-<cfdump var="#getUsers#"/>
 </body>
 </html>
