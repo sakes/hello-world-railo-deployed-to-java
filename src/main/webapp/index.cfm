@@ -6,7 +6,9 @@
 
 <cfif structKeyExists(request, "dsn")>
 	<cfquery datasource="#request.dsn#" name="test">
-		SHOW TABLES;
+		SELECT TABLE_NAME
+		FROM INFORMATION_SCHEMA.TABLES
+		WHERE TABLE_TYPE = 'BASE TABLE'
 	</cfquery>
 	<cfdump var="#test#"/>
 </cfif>
